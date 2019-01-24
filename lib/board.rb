@@ -4,8 +4,8 @@ class Board
 
 	def initialize
 		@empty_case = ['         ', '         ', '         ']
-		@player_1_case = ['   OOO   ','  O   O  ','   OOO   ']
-		@player_2_case = ['  XX XX  ','    X    ','  XX XX  ']
+		@player_1_case = ['   OOO   '.light_blue,'  O   O  '.light_blue,'   OOO   '.light_blue]
+		@player_2_case = ['  XX XX  '.green,'    X    '.green,'  XX XX  '.green]
 		@A_line = [@empty_case, @empty_case, @empty_case]
 		@B_line = [@empty_case, @empty_case, @empty_case]
 		@C_line = [@empty_case, @empty_case, @empty_case]
@@ -49,10 +49,60 @@ class Board
 	end
 
 	def end?
-		false
+		(0..2).each { |i| check_line(i, 0) ? (return 1) : 0 }
+		(0..2).each { |i| check_column(0, i) ? (return 1) : 0 }
+		check_descending_diagonal(0, 0) ? (return 1) : 0
+		check_ascending_diagonal(2, 0) ? (return 1) : 0
+		full_board? ? (return 2) : 0
 	end
 
 	def return_board
 		@board
+	end
+
+	private
+
+	def full_board?
+		(0..2).each do |cur_line|
+			@board[cur_line][0] == @empty_case ? (return false) : true
+			@board[cur_line][1] == @empty_case ? (return false) : true
+			@board[cur_line][2] == @empty_case ? (return false) : true
+		end
+	end
+
+	def check_line(cur_line, cur_col)
+		@board[cur_line][cur_col] == @empty_case ? (return false) : nil
+		if @board[cur_line][cur_col] == @board[cur_line][cur_col + 1]
+			@board[cur_line][cur_col] == @board[cur_line][cur_col + 2] ? true : false
+		else
+			false
+		end
+	end
+
+	def check_column(cur_line, cur_col)
+		@board[cur_line][cur_col] == @empty_case ? (return false) : nil
+		if @board[cur_line][cur_col] == @board[cur_line + 1][cur_col]
+			@board[cur_line][cur_col] == @board[cur_line + 2][cur_col] ? true : false
+		else
+			false
+		end
+	end
+
+	def check_descending_diagonal(cur_line, cur_col)
+		@board[cur_line][cur_col] == @empty_case ? (return false) : nil
+		if @board[cur_line][cur_col] == @board[cur_line + 1][cur_col + 1]
+			@board[cur_line][cur_col] == @board[cur_line + 2][cur_col + 2] ? true : false
+		else
+			false
+		end
+	end
+
+	def check_ascending_diagonal(cur_line, cur_col)
+		@board[cur_line][cur_col] == @empty_case ? (return false) : nil
+		if @board[cur_line][cur_col] == @board[cur_line - 1][cur_col + 1]
+			@board[cur_line][cur_col] == @board[cur_line - 2][cur_col + 2] ? true : false
+		else
+			false
+		end
 	end
 end

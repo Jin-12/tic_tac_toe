@@ -11,7 +11,7 @@ class Game
 
   def play_a_round(view, board_instance)
     round_number = 0
-    while !board_instance.end?
+    while board_instance.end? == 0
       puts ""
       cur_player = round_number % 2
       cur_player_name = (cur_player == 0 ? @player_1 : @player_2)
@@ -24,5 +24,7 @@ class Game
       board_instance.board_update(pawn_pos, cur_player)
       round_number += 1
     end
+    view.show_the_board(board_instance.return_board)
+    board_instance.end? == 1 ? view.done([cur_player_name]) : view.done([@player_1, @player_2])
   end
 end

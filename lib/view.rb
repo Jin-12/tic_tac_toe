@@ -8,26 +8,27 @@ class View
     player_1 = gets.chomp
     puts "Ya will be thuh fuhrst puh-layer"
     puts "eend ya, how do ya cahwl yourself ?"
-    puts "> "
+    print "> "
     player_2 = gets.chomp
     puts "ya will be thuh second one !"
-    players_hash = {"player_1" => player_1,"player_2" => player_2}
+    players_hash = {"player_1" => player_1.light_blue,"player_2" => player_2.green}
   end
 
   def ask_where
     puts "Where do ya wanna puh-lace yo-wr pawn ?(Put it like this : 'A 1' or 'B 3'.)"
+    print "> "
     return gets.chomp
   end
 
   def wrong_entry
-    puts" Okay Imma explain it well for ya : 'Wrong entry, It has to be within the board A to C line and 1 to 3 column. Here's an example = (A 2). It must be separated by a space.'"
+    puts"Ya 'ave ta puh-lay this game ta it's end !!!!!!!\n Okay Imma explain it well for ya : 'Wrong entry, It has to be within the board A to C line and 1 to 3 column. Here's an example = (A 2). It must be separated by a space.'"
   end
 
-  def done(winner_name)
-    if !!winner_name
-      puts "Congratulations,#{winner_name}, Ya're not so bad after all ."
+  def done(winner_name_array)
+    if winner_name_array.count == 1
+      puts "Congratulations, #{winner_name_array[0]}, Ya're not so bad after all ."
     else
-      puts "Tie Game... Wanna leave it at that ?"
+      puts "Tie Game... You, #{winner_name_array[0]} and #{winner_name_array[1]} prayin' for me t' properly end it?"
     end
 
   end
