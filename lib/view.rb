@@ -23,6 +23,15 @@ class View
     puts" Okay Imma explain it well for ya : 'Wrong entry, It has to be within the board A to C line and 1 to 3 column. Here's an example = (A 2). It must be separated by a space.'"
   end
 
+  def done(winner_name)
+    if !!winner_name
+      puts "Congratulations,#{winner_name}, Ya're not so bad after all ."
+    else
+      puts "Tie Game... Wanna leave it at that ?"
+    end
+
+  end
+
   def play_again?
     puts "Wanna play another round son ?"
     puts "yay or nay ?"
