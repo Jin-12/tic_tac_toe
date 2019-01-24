@@ -13,8 +13,8 @@ class Router
     while true
 
       #on affiche le menu
-      puts "What do ya wanna do maah partner ?\n"
-      puts "T' puh-lay this motherfuckin' game, wrahtes: 'Ah wanna puh-lay this motherfuckin' game !'"
+      puts "What do ya wanna do maah partner ?"
+      puts "\nT' puh-lay this motherfuckin' game, wrahtes: 'Ah wanna puh-lay this motherfuckin' game !'"
       puts "T' escape, wrahtes: 'Let me git out awf thair !'"
       params = gets.chomp #on attend le choix de l'utilisateur
 
