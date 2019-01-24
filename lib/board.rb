@@ -1,7 +1,6 @@
 #frozen_string_litteral: true
 
 class Board
-
 # Right at the new board creation we set the cases style and board structure
 	def initialize
 		@empty_case = ['         ', '         ', '         ']

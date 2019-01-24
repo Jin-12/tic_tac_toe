@@ -2,8 +2,8 @@
 
 require 'view.rb'
 require 'board.rb'
-class Game
 
+class Game
   def initialize(player_1,player_2)
     @player_1 = player_1
     @player_2 = player_2
