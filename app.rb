@@ -1,4 +1,9 @@
+# frozen_string_literal: true
+
 require 'bundler'
 Bundler.require
-require 'scrapper'
-$:.unshift File.expand_path('./../lib', __FILE__)
+
+$:.unshift File.expand_path("./../lib", __FILE__)
+require 'router.rb'
+
+Router.new.perform
