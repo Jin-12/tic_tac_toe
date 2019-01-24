@@ -9,4 +9,4 @@ BEWARE ! This program has an accent rather difficult to understand...
 ## Structure
 - Too borin' t' explain pfffff.
 
-Jus' try t' wrahtes 'ruby app. rb' in thuh tik tak toe folder eend follow thuh poke partner!!
+Jus' try t' wrahtes 'ruby app. rb' in thuh tik tak toe folder eend follow thuh poke partner!! An don't forget thuh bundle install
