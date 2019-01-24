@@ -13,7 +13,7 @@ end
 def valid_pos?(pawn_pos)
 	pawn_line = pawn_pos.split[0]
 	pawn_col = pawn_pos.split[1].to_i - 1
-	(0..2).include? pawn_col ? nil : (return false)
+	[0, 1, 2].include?(pawn_col) ? nil : (return false)
 	case pawn_line
 	when 'A'
 		@A_line[pawn_col] == @empty_case ? true : false
@@ -24,6 +24,10 @@ def valid_pos?(pawn_pos)
 	else
 		return false
 	end
+end
+
+def end?
+	false
 end
 
 def return_board

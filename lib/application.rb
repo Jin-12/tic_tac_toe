@@ -13,9 +13,9 @@ class Application
 	def start_the_game
 		params = @view.ask_players_name
 		game = Game.new(params['player_1'], params['player_2'])
-		game.play_a_round(@view, Board.new.return_board)
+		game.play_a_round(@view, Board.new)
 		while true
-			@view.play_again? ? game.play_a_round(@view, Board.new.return_board) : @view.escape_the_loop# onsort de la partie avec un petit message de fils de pute
+			@view.play_again? ? game.play_a_round(@view, Board.new) : @view.escape_the_loop# onsort de la partie avec un petit message de fils de pute
 		end
 	end
 end
