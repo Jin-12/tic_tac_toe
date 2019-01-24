@@ -1,4 +1,5 @@
 # frozen_string_litteral: true
+require 'view'
 require 'board.rb'
 class Game
 
@@ -8,13 +9,18 @@ class Game
   end
 
   def play_a_round(view, board)
-    puts "on est passé par play_a_round"
+    unless Check.end?(board) do
+    puts ""
     view.show_the_board(board)
-#     while !finished?
-# #on lance un nouveau tour
-# #on display le tableau
+    while true
+      Board.valid_pos?(view.ask_where?) ? puts "valid" : view.wrong_entry
+
+
+    end
+
 # #le joueur joue
 # #on enregistre le tour
-#     end
+    end
   end
+
 end
