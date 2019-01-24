@@ -1,6 +1,6 @@
 # frozen_string_litteral: true
 
-require 'view'
+require 'view.rb'
 require 'board.rb'
 class Game
 
@@ -14,7 +14,7 @@ class Game
       puts ""
       view.show_the_board(board.return_board)
       while true
-        Board.valid_pos?(view.ask_where?) ? (puts "valid") : view.wrong_entry
+        board.valid_pos?(view.ask_where) ? (puts "valid") : view.wrong_entry
     end
   end
 end
